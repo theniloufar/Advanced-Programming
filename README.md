@@ -1,30 +1,73 @@
-# Combined Projects: Class Schedule Generator and Place Visit Planner
 
-This repository contains two projects:
-1. **Class Schedule Generator**: Creates weekly schedules for classes and assigns teachers based on availability and constraints.
-2. **Place Visit Planner**: Plans optimal visits to places based on opening hours, ranks, and visitation constraints.
+#Class Schedule & Place Visit Planner
 
-## Project 1: Class Schedule Generator
+## Overview
 
-### Overview
-The Class Schedule Generator creates a weekly timetable for courses while ensuring:
-- Teachers are assigned based on their availability.
-- No schedule conflicts between courses and teacher commitments.
-- Courses are distributed evenly across the week.
+This repository contains two distinct C++ projects:
 
-### Features
-1. **Teacher Management**:
-   - Handles teacher availability, free days, and courses they can teach.
-   - Assigns teachers with minimal workdays and resolves conflicts.
+1. **Class Schedule** - A program that generates an optimized weekly schedule for courses and teachers.
+2. **Place Visit Planner** - A planner that recommends the best sequence of places to visit based on time, ranking, and availability.
 
-2. **Course Scheduling**:
-   - Schedules courses based on provided time slots and teacher availability.
-   - Ensures all courses are allocated without conflicts.
+---
 
-3. **Output**:
-   - Produces a structured weekly schedule showing courses, assigned teachers, and timings.
+## 📁 Project 1: Class Schedule
+
+### Description
+The **Class Schedule** program creates an optimized weekly timetable for courses by considering teacher availability, course timings, and specific constraints. It ensures that no teacher is double-booked and all courses are scheduled appropriately.
+
+### Key Features
+- **Teacher & Course Management**: Handles multiple teachers and courses.
+- **Conflict Resolution**: Avoids overlapping schedules.
+- **Sorting & Assignment**: Prioritizes courses alphabetically.
 
 ### How to Run
-1. **Compile**:
-   ```bash
-   g++ "class schedule.cpp" -o ScheduleGenerator
+1. Compile the project using a C++ compiler.
+2. Input:
+   - Number of teachers and their availability.
+   - Course details (name, day, start/end time).
+3. Output: A complete weekly course schedule.
+
+---
+
+## 📁 Project 2: Place Visit Planner
+
+### Description
+The **Place Visit Planner** suggests an optimal visiting sequence for a list of places based on opening/closing times and priority ranks. It ensures maximum coverage within the available time.
+
+### Key Features
+- **Time Optimization**: Prioritizes places with higher ranks and longer availability.
+- **Automatic Sorting**: Adjusts visiting order dynamically.
+- **Detailed Itinerary**: Prints a complete visiting schedule.
+
+### How to Run
+1. Prepare an input CSV file with the following structure:
+   ```
+   name,openingTime,closingTime,rank
+   PlaceA,08:00,17:00,1
+   PlaceB,09:00,18:00,2
+   ```
+2. Compile the project using a C++ compiler.
+3. Execute the program:
+   ```
+   ./PlaceVisitPlanner <input_file.csv>
+   ```
+4. Output: A suggested visit schedule.
+
+---
+
+## ⚙️ Requirements
+- **Compiler**: C++11 or later.
+- **Standard Libraries**: `<iostream>`, `<vector>`, `<fstream>`, `<algorithm>`, `<string>`.
+
+---
+
+## 🚀 Getting Started
+1. Clone the repository:
+   ```
+   git clone https://github.com/YourUsername/YourRepo.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd YourRepo
+   ```
+3. Compile and run each project as described.
